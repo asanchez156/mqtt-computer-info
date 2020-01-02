@@ -5,7 +5,7 @@ import time
 from environment import *
 from macos_commands import *
 from sensor import Sensor
-import paho.mqtt.client as mqtt
+import paho.mqtt.client as mqtt # https://pypi.org/project/paho-mqtt/
 
 client = mqtt.Client("asanchez", True)
 client.username_pw_set(MQTT_USER, MQTT_PASS)
