@@ -1,6 +1,5 @@
 # RUN on mac init: https://stackoverflow.com/questions/6442364/running-script-upon-login-mac
 
-import os
 import time
 from environment import *
 from macos_commands import *
@@ -18,18 +17,18 @@ def redefine_sensor_list():
   sensor_list.append(Sensor("battery_percentage", battery_percentage_command))
   sensor_list.append(Sensor("ac_connected", ac_connected_command))
   sensor_list.append(Sensor("cpu_temperature", CPU_temperature_command))
+  sensor_list.append(Sensor("gpu_temperature", GPU_temperature_command))
   sensor_list.append(Sensor("battery_temperature", battery_temperature_command))
   sensor_list.append(Sensor("battery_cycles", battery_cycles_command))
 
-print("Starting sensor tracking")
-while True:
+def iterate_this():
   redefine_sensor_list()
   for sensor in sensor_list:
     print("Sensor: %s. Value %s" % (sensor.name, sensor.value))
 
   # Connect to the broker
   print("Connecting..")
-  client.connect(MQTT_HOST, MQTT_PORT, 30)
+  client.connect(MQTT_HOST, MQTT_PORT, 60)
 
   print("Conected! Publishing...")
   for sensor in sensor_list:
@@ -41,5 +40,11 @@ while True:
   print("Published! Disconnecting...")
   client.disconnect()
 
+print("Starting sensor tracking")
+while True:
+  try:
+    iterate_this()
+  except:
+    print("Error!")
   # Sleep
   time.sleep(60)

@@ -1,3 +1,5 @@
+import os
+
 class Sensor:
 
   def __init__(self, name, shell_command):
