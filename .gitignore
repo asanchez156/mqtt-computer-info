@@ -2,3 +2,5 @@
 environment.py
 run.sh
 *.pyc
+*.log
+*.plist

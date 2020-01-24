@@ -1,4 +1,5 @@
 import os
+from environment import *
 
 class Sensor:
 
@@ -8,7 +9,7 @@ class Sensor:
     self.getShellCommandResult()
 
   def getMqtt(self):
-    return "andoni/macos/%s/state" % (self.name)
+    return "%s%s/state" % (MQTT_PREFIX, self.name)
 
   def getShellCommandResult(self):
     self.value = shell_command(self.shell_command)

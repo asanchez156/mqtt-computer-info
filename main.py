@@ -20,6 +20,7 @@ def redefine_sensor_list():
   sensor_list.append(Sensor("gpu_temperature", GPU_temperature_command))
   sensor_list.append(Sensor("battery_temperature", battery_temperature_command))
   sensor_list.append(Sensor("battery_cycles", battery_cycles_command))
+  sensor_list.append(Sensor("ssd_capacity", SSD_capacity_command))
 
 def iterate_this():
   redefine_sensor_list()
