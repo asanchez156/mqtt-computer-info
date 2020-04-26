@@ -4,3 +4,5 @@ run.sh
 *.pyc
 *.log
 *.plist
+
+/virtualenvs/_venv*
