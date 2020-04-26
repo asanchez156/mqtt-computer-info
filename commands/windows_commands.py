@@ -13,7 +13,10 @@ from common_commands import *
 def windowsCommands():
   return [
     ["battery_percentage", psutil.sensors_battery().percent],
-    ["power_plugged", power_plugged()]
+    ["power_plugged", power_plugged()],
+    ["cpu_percentage", psutil.cpu_percent(interval=1)],
+    ["ram_percentage", psutil.virtual_memory().percent],
+    # ["ip_address", ip_address()]
   #   ["cpu_temperature", CPU_temperature_command],
   #   ["gpu_temperature", GPU_temperature_command],
   #   ["battery_temperature", battery_temperature_command],

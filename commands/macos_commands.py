@@ -22,18 +22,15 @@ def mqtt_publish_sensor(sensor):
   # print(mqtt_command)
   sent_mqtt_command_result = shell_command(mqtt_command)
  
-
 def macosCommands():
   return [
     ["battery_percentage", psutil.sensors_battery().percent],
     ["power_plugged", power_plugged()],
-    ["disk_usage_percentage", psutil.disk_usage('/').percent],
     ["cpu_percentage", psutil.cpu_percent(interval=1)],
     ["ram_percentage", psutil.virtual_memory().percent],
     ["cpu_temperature", shell_command(CPU_temperature_command)],
     ["gpu_temperature", shell_command(GPU_temperature_command)],
     ["battery_temperature", shell_command(battery_temperature_command)],
     ["battery_cycles", shell_command(battery_cycles_command)],
-    ["ssd_capacity", shell_command(SSD_capacity_command)],
-    ["ip_address", shell_command(ip_address)],
+    ["ssd_capacity", shell_command(SSD_capacity_command)]
   ]
