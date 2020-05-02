@@ -7,12 +7,12 @@
     <key>ProgramArguments</key>
     <array>
         <string>PYTHON_PATH_LOCATION</string>
-        <string>LOCATION/mqtt-computer-info/main.py</string>
+        <string>LOCATION/mqtt-computer-info/src/main.py</string>
     </array>
     <key>StandardOutPath</key>
-    <string>LOCATION/mqtt-computer-info/logs/logfile.log</string>
+    <string>LOCATION/mqtt-computer-info/mac-logs/logfile.log</string>
     <key>StandardErrorPath</key>
-    <string>LOCATION/mqtt-computer-info/logs/error_logfile.log</string>
+    <string>LOCATION/mqtt-computer-info/mac-logs/error_logfile.log</string>
     <key>KeepAlive</key>
     <true/>
 </dict>

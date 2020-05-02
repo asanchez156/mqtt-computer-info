@@ -32,5 +32,6 @@ def macosCommands():
     ["gpu_temperature", shell_command(GPU_temperature_command)],
     ["battery_temperature", shell_command(battery_temperature_command)],
     ["battery_cycles", shell_command(battery_cycles_command)],
-    ["ssd_capacity", shell_command(SSD_capacity_command)]
+    ["ssd_capacity", shell_command(SSD_capacity_command)],
+    ["ip_address", shell_command(ip_address)],
   ]
